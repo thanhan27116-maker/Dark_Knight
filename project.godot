@@ -13,7 +13,6 @@ config_version=5
 config/name="Code_Dark_Knight"
 run/main_scene="uid://cor85j0aonl1g"
 config/features=PackedStringArray("4.5", "Mobile")
-config/icon="res://icon.svg"
 
 [rendering]
 
