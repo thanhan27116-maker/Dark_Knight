@@ -1,0 +1,112 @@
+[gd_scene load_steps=5 format=3 uid="uid://g1cp7me723hy"]
+
+[ext_resource type="Texture2D" uid="uid://dyqs3atr3qwk5" path="res://Assets/UI/BlackGreyUISheet-0.png" id="1_eas8t"]
+[ext_resource type="Script" uid="uid://b2vj3kcwtdrfi" path="res://Scene/menu.gd" id="1_u2k45"]
+[ext_resource type="Texture2D" uid="uid://cs50ducg8hxr1" path="res://Assets/UI/BlackGreyUISheet-22.png" id="2_u2k45"]
+
+[sub_resource type="Theme" id="Theme_u2k45"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u2k45")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 341.0
+offset_right = 797.0
+offset_bottom = 645.0
+texture = ExtResource("1_eas8t")
+
+[node name="menu_btn" type="CanvasLayer" parent="."]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="play_btn" type="Panel" parent="menu_btn"]
+offset_left = -0.5
+offset_top = 0.5
+offset_right = 39.5
+offset_bottom = 40.5
+
+[node name="Button" type="Button" parent="menu_btn/play_btn"]
+z_index = 10
+texture_filter = 1
+layout_mode = 0
+offset_left = 242.0
+offset_top = 128.0
+offset_right = 328.0
+offset_bottom = 159.0
+text = "PLAY"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="menu_btn/play_btn"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 229.5
+offset_top = 127.5
+offset_right = 337.16666
+offset_bottom = 167.5
+texture = ExtResource("2_u2k45")
+
+[node name="option_btn" type="Panel" parent="menu_btn"]
+offset_left = -1.5
+offset_top = 57.5
+offset_right = 38.5
+offset_bottom = 97.5
+theme = SubResource("Theme_u2k45")
+
+[node name="Button" type="Button" parent="menu_btn/option_btn"]
+z_index = 10
+texture_filter = 1
+layout_mode = 0
+offset_left = 242.0
+offset_top = 128.0
+offset_right = 328.0
+offset_bottom = 159.0
+text = "OPTION
+"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="menu_btn/option_btn"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 229.5
+offset_top = 127.5
+offset_right = 337.16666
+offset_bottom = 167.5
+texture = ExtResource("2_u2k45")
+
+[node name="exit_btn" type="Panel" parent="menu_btn"]
+offset_top = 110.5
+offset_right = 40.0
+offset_bottom = 150.5
+mouse_filter = 1
+
+[node name="Button" type="Button" parent="menu_btn/exit_btn"]
+z_index = 10
+texture_filter = 1
+layout_mode = 0
+offset_left = 242.0
+offset_top = 128.0
+offset_right = 328.0
+offset_bottom = 159.0
+text = "EXIT
+"
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="menu_btn/exit_btn"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 229.5
+offset_top = 127.5
+offset_right = 337.16666
+offset_bottom = 167.5
+mouse_filter = 2
+texture = ExtResource("2_u2k45")

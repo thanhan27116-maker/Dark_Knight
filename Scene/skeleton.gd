@@ -12,7 +12,7 @@ var player = null
 func _ready() -> void:
 	sight.body_entered.connect(_on_area_2d_body_entered)
 	sight.body_exited.connect(_on_area_2d_body_exited)
-	pass # Replace with function body.
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,9 +26,7 @@ func _physics_process(delta: float) -> void: #Dùng cho vật lí, va chạm
 		container.scale.x = -1 if direction.x < 0 else 1
 		
 		if direction.x != 0:
-			anim.play("walk")
-			
-			
+			anim.play("walk")			
 	else:
 		velocity = Vector2.ZERO
 		anim.play("idle")
@@ -37,7 +35,7 @@ func _physics_process(delta: float) -> void: #Dùng cho vật lí, va chạm
 	
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.name == "player":
 		player = body
 		is_player_detected = true
 

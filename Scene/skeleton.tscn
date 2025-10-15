@@ -542,14 +542,17 @@ shape = SubResource("RectangleShape2D_v8jiy")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_xumpj")
-animation = &"react"
-frame_progress = 0.23403797
+animation = &"walk"
+frame_progress = 0.59466463
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_xy45g")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

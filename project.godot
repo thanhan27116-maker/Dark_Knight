@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Code_Dark_Knight"
-run/main_scene="uid://cor85j0aonl1g"
+run/main_scene="uid://g1cp7me723hy"
 config/features=PackedStringArray("4.5", "Mobile")
 
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.12955844, 0.12955847, 0.12955844, 1)
