@@ -1,10 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://g1cp7me723hy"]
+[gd_scene load_steps=7 format=3 uid="uid://g1cp7me723hy"]
 
 [ext_resource type="Texture2D" uid="uid://dyqs3atr3qwk5" path="res://Assets/UI/BlackGreyUISheet-0.png" id="1_eas8t"]
 [ext_resource type="Script" uid="uid://b2vj3kcwtdrfi" path="res://Scene/menu.gd" id="1_u2k45"]
 [ext_resource type="Texture2D" uid="uid://cs50ducg8hxr1" path="res://Assets/UI/BlackGreyUISheet-22.png" id="2_u2k45"]
 
-[sub_resource type="Theme" id="Theme_u2k45"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u2k45"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_alu6o"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffxp3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -31,9 +38,10 @@ transform = Transform2D(2, 0, 0, 2, 0, 0)
 
 [node name="play_btn" type="Panel" parent="menu_btn"]
 offset_left = -0.5
-offset_top = 0.5
+offset_top = -37.0
 offset_right = 39.5
-offset_bottom = 40.5
+offset_bottom = 3.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_u2k45")
 
 [node name="Button" type="Button" parent="menu_btn/play_btn"]
 z_index = 10
@@ -53,14 +61,14 @@ offset_left = 229.5
 offset_top = 127.5
 offset_right = 337.16666
 offset_bottom = 167.5
+mouse_filter = 2
 texture = ExtResource("2_u2k45")
 
 [node name="option_btn" type="Panel" parent="menu_btn"]
-offset_left = -1.5
-offset_top = 57.5
-offset_right = 38.5
-offset_bottom = 97.5
-theme = SubResource("Theme_u2k45")
+offset_top = 21.5
+offset_right = 40.0
+offset_bottom = 61.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_alu6o")
 
 [node name="Button" type="Button" parent="menu_btn/option_btn"]
 z_index = 10
@@ -81,13 +89,15 @@ offset_left = 229.5
 offset_top = 127.5
 offset_right = 337.16666
 offset_bottom = 167.5
+mouse_filter = 2
 texture = ExtResource("2_u2k45")
 
 [node name="exit_btn" type="Panel" parent="menu_btn"]
-offset_top = 110.5
+offset_top = 80.5
 offset_right = 40.0
-offset_bottom = 150.5
+offset_bottom = 120.5
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_ffxp3")
 
 [node name="Button" type="Button" parent="menu_btn/exit_btn"]
 z_index = 10
@@ -110,3 +120,6 @@ offset_right = 337.16666
 offset_bottom = 167.5
 mouse_filter = 2
 texture = ExtResource("2_u2k45")
+
+[connection signal="pressed" from="menu_btn/play_btn/Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="menu_btn/exit_btn/Button" to="." method="_on_exit_button_pressed"]

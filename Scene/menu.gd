@@ -1,9 +1,8 @@
 extends Control
 
+func _on_exit_button_pressed() -> void:
+	get_tree().quit()
 
-func _ready() -> void:
-	$menu_btn/exit_btn/Button.pressed.connect(_on_button_pressed)
-		
-func _on_button_pressed() -> void:
-	print("thoat")
-	get_tree().quit() 
+
+func _on_play_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scene/world.tscn")

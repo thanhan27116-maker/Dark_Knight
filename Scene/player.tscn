@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cfee7it8u1364"]
+[gd_scene load_steps=42 format=3 uid="uid://cfee7it8u1364"]
 
 [ext_resource type="Texture2D" uid="uid://kg034senn5ga" path="res://Assets/Character/FreeKnight_v1/Colour1/NoOutline/120x80_PNGSheets/_Fall.png" id="1_hqtel"]
 [ext_resource type="Script" uid="uid://c3psud1y7cev0" path="res://Script/player.gd" id="1_sweqy"]
@@ -261,6 +261,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6qlh"]
+size = Vector2(37.75, 37.5)
+
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_sweqy")
@@ -276,4 +279,10 @@ texture_filter = 1
 position = Vector2(5, -22)
 sprite_frames = SubResource("SpriteFrames_hl5qd")
 animation = &"atack"
-frame_progress = 0.1185929
+frame_progress = 0.0789292
+
+[node name="attack_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_area"]
+position = Vector2(42.5, -1)
+shape = SubResource("RectangleShape2D_p6qlh")
