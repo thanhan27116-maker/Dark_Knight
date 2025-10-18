@@ -26,6 +26,8 @@ func _physics_process(delta: float) -> void:
 		attack()
 		
 	if is_attacking or is_dead:
+		velocity.x *= 0.3
+		move_and_slide()
 		return		
 	if is_hit:
 		velocity.x = 0
