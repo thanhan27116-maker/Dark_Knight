@@ -20,6 +20,7 @@ var SPEED = 100.0
 var is_player_detected = false
 var player = null
 
+var last_player_direction = 1
 
 func _ready() -> void:
 	sight.body_entered.connect(_on_area_2d_body_entered)
@@ -33,13 +34,17 @@ func _physics_process(delta: float) -> void:
 		return
 	if is_hit:
 		return
+		
+	
+	velocity += get_gravity() * delta
+	
 
 	if is_player_detected and player:
 		var  player_pos = player.position
 		var direction = (player_pos - self.position).normalized()
+		last_player_direction = -1 if direction.x < 0 else 1
 		
-		
-		container.scale.x = -1 if direction.x < 0 else 1
+		container.scale.x = last_player_direction
 		if direction.x == 1:
 			attack.position.x = abs(attack.position.x)
 		if direction.x == -1:
@@ -51,10 +56,12 @@ func _physics_process(delta: float) -> void:
 			velocity.y = 0
 			anim.play("walk")			
 	else:
-		velocity = Vector2.ZERO
-		velocity.y = 0
-		anim.play("idle")
-	move_and_slide()	
+		#velocity = Vector2.ZERO
+		#velocity.y = 0
+		#anim.play("idle")
+	
+		container.scale.x = last_player_direction
+	move_and_slide()
 	
 	#tầm nhìn enemy
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -97,9 +104,14 @@ func attacking_loop():
 
 
 func attack_player():
-
+	if is_dead or not player:
+		return
 	anim.play("attack")
 	await get_tree().create_timer(0.5).timeout
+	
+	if is_dead:
+		return
+	
 	if player and player.has_method("take_damage"):
 		player.take_damage(attack_damage)
 
@@ -126,8 +138,9 @@ func take_damage(amount: float):
 	can_attack = true
 	if current_hp <= 0:
 		die()
+		return
 	else:
-		if was_attack and player:
+		if current_hp > 0 and  was_attack and player:
 			is_attacking = true
 			attacking_loop()
 

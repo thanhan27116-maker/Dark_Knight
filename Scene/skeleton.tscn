@@ -396,7 +396,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"dead",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -528,7 +528,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7j0h5"]
-size = Vector2(35, 52)
+size = Vector2(39.5, 52)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xy45g"]
 radius = 188.02394
@@ -546,31 +546,29 @@ shape = SubResource("RectangleShape2D_v8jiy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="container"]
 texture_filter = 1
+position = Vector2(8, -8)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_xumpj")
 animation = &"attack"
-frame = 14
-frame_progress = 0.19043171
+frame = 17
+frame_progress = 1.0
 
 [node name="attack" type="Area2D" parent="container"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="container/attack"]
-position = Vector2(21.5, 11)
+position = Vector2(28.25, -2)
 shape = SubResource("RectangleShape2D_7j0h5")
 
 [node name="sight" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sight"]
+visible = false
 shape = SubResource("CircleShape2D_xy45g")
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="hurt_box" type="Area2D" parent="." groups=["enemy"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurt_box"]
-position = Vector2(-8.5, 8)
+position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_xy45g")
 
 [connection signal="body_entered" from="container/attack" to="." method="_on_attack_body_entered"]
