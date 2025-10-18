@@ -1053,7 +1053,7 @@ position = Vector2(9214, 0)
 position = Vector2(10366, 0)
 
 [node name="player" parent="." instance=ExtResource("10_6a5p4")]
-position = Vector2(69, 443)
+position = Vector2(800, 539)
 
 [node name="check_point1" parent="." instance=ExtResource("13_0gfnl")]
 position = Vector2(1495, 545)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://dkcf7sgb08rog"]
+[gd_scene load_steps=82 format=3 uid="uid://dkcf7sgb08rog"]
 
 [ext_resource type="Script" uid="uid://cjt3yyawctxlg" path="res://Script/skeleton.gd" id="1_xy45g"]
 [ext_resource type="Texture2D" uid="uid://cex6fosdl7dre" path="res://Assets/Character/Skeleton Sprite Pack/Skeleton/Sprite Sheets/Skeleton Attack.png" id="1_ymvsc"]
@@ -344,7 +344,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dmq2e")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 10.0
 }, {
@@ -527,6 +527,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j0h5"]
+size = Vector2(35, 52)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_xy45g"]
 radius = 188.02394
 
@@ -545,11 +548,19 @@ shape = SubResource("RectangleShape2D_v8jiy")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_xumpj")
-animation = &"hit"
+animation = &"attack"
+frame = 14
+frame_progress = 0.19043171
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="attack" type="Area2D" parent="container"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="container/attack"]
+position = Vector2(21.5, 11)
+shape = SubResource("RectangleShape2D_7j0h5")
+
+[node name="sight" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sight"]
 shape = SubResource("CircleShape2D_xy45g")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
@@ -562,5 +573,7 @@ offset_bottom = 40.0
 position = Vector2(-8.5, 8)
 shape = SubResource("RectangleShape2D_xy45g")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="container/attack" to="." method="_on_attack_body_entered"]
+[connection signal="body_exited" from="container/attack" to="." method="_on_attack_body_exited"]
+[connection signal="body_entered" from="sight" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="sight" to="." method="_on_area_2d_body_exited"]

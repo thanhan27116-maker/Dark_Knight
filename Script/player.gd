@@ -9,15 +9,28 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 var attack_damage = 25
+var max_hp = 100
+var current_hp = 0
 var is_attacking = false
 var can_attack = true 
+
+var is_dead = false
+var is_hit = false
+
+func _ready() -> void:
+	attack_area.monitoring = false
+	current_hp = max_hp
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("player_attack") and can_attack and is_on_floor():
 		attack()
 		
-	if is_attacking:
+	if is_attacking or is_dead:
 		return		
+	if is_hit:
+		velocity.x = 0
+		move_and_slide()
+		return
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -58,7 +71,7 @@ func attack():
 	is_attacking = true
 	can_attack = false
 	
-	anim.play("atack")
+	anim.play("attack")
 	attack_area.monitoring = true
 	
 	await anim.animation_finished
@@ -68,6 +81,37 @@ func attack():
 	await get_tree().create_timer(0.3).timeout
 	can_attack = true
 
+func take_damage(amount: float) -> void:
+	if is_dead:
+		return
+	if is_hit:
+		return
+	if is_attacking:
+		return
+	current_hp -= amount
+	print("current player hp: ", current_hp)
+	is_hit = true
+
+	anim.play("hit")
+	await get_tree().create_timer(0.3).timeout
+	is_hit = false
+	
+	if current_hp <= 0:
+		
+		die()
+		
+
+func die():
+	print("die called")
+	if is_dead:
+		return
+	
+	is_dead = true
+	print("die")
+	anim.play("dead")
+	await anim.animation_finished
+	await get_tree().create_timer(1).timeout
+	get_tree().reload_current_scene()
 
 func _on_attack_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
