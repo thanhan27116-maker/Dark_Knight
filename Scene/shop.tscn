@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://lqqu4ffqmk15"]
+
+[ext_resource type="Texture2D" uid="uid://s6vgl512smr0" path="res://Assets/decorations/shop_anim.png" id="1_hmgu4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qr4x"]
+atlas = ExtResource("1_hmgu4")
+region = Rect2(0, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7vg8"]
+atlas = ExtResource("1_hmgu4")
+region = Rect2(118, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajnks"]
+atlas = ExtResource("1_hmgu4")
+region = Rect2(236, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhysv"]
+atlas = ExtResource("1_hmgu4")
+region = Rect2(354, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_suadm"]
+atlas = ExtResource("1_hmgu4")
+region = Rect2(472, 0, 118, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1grnk"]
+atlas = ExtResource("1_hmgu4")
+region = Rect2(590, 0, 118, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_blqjs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qr4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7vg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajnks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhysv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_suadm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1grnk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="shop" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_blqjs")
+frame_progress = 0.04969959

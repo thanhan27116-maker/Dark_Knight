@@ -287,4 +287,6 @@ frame_progress = 0.0789292
 position = Vector2(34.1875, -1)
 shape = SubResource("RectangleShape2D_p6qlh")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [connection signal="area_entered" from="container/attack_area" to="." method="_on_attack_area_area_entered"]
