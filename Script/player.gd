@@ -2,20 +2,18 @@ extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $container/AnimatedSprite2D
 @onready var container: Node2D = $container
-@onready var attack_area: Area2D = $attack_area
-
-
+@onready var attack_area: Area2D = $container/attack_area
 
 var state = "idle"
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-var attack_damge = 25
+var attack_damage = 25
 var is_attacking = false
 var can_attack = true 
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("player_attack") and can_attack:
+	if Input.is_action_just_pressed("player_attack") and can_attack and is_on_floor():
 		attack()
 		
 	if is_attacking:
@@ -31,6 +29,10 @@ func _physics_process(delta: float) -> void:
 	if direction != 0:
 		container.scale.x = direction
 		velocity.x = direction * SPEED
+		if direction == 1:
+			attack_area.position.x = abs(attack_area.position.x)
+		else:
+			attack_area.position.x = -abs(attack_area.position.x)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
@@ -65,9 +67,10 @@ func attack():
 	is_attacking = false
 	await get_tree().create_timer(0.3).timeout
 	can_attack = true
-	
-	
-	
-	
-	
-	
+
+
+func _on_attack_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("enemy"):
+		var enemy = area.get_parent()
+		if enemy.has_method("take_damage"):
+			enemy.take_damage(attack_damage)

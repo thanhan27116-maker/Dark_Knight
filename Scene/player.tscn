@@ -150,7 +150,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2dof7")
 }],
-"loop": true,
+"loop": false,
 "name": &"atack",
 "speed": 10.0
 }, {
@@ -262,7 +262,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6qlh"]
-size = Vector2(37.75, 37.5)
+size = Vector2(54.375, 37.5)
 
 [node name="player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -281,8 +281,10 @@ sprite_frames = SubResource("SpriteFrames_hl5qd")
 animation = &"atack"
 frame_progress = 0.0789292
 
-[node name="attack_area" type="Area2D" parent="."]
+[node name="attack_area" type="Area2D" parent="container"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_area"]
-position = Vector2(42.5, -1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="container/attack_area"]
+position = Vector2(34.1875, -1)
 shape = SubResource("RectangleShape2D_p6qlh")
+
+[connection signal="area_entered" from="container/attack_area" to="." method="_on_attack_area_area_entered"]
