@@ -15,8 +15,8 @@ var is_attacking = false
 var can_attack = true 
 
 func _physics_process(delta: float) -> void:
-	#if Input.is_action_just_pressed("player_attack") and can_attack:
-		#attack()
+	if Input.is_action_just_pressed("player_attack") and can_attack:
+		attack()
 		
 	if is_attacking:
 		return		
