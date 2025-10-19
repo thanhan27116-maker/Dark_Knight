@@ -35,8 +35,8 @@ func _physics_process(delta: float) -> void:
 	if is_hit:
 		return
 		
-	
-	velocity += get_gravity() * delta
+	if not is_on_floor():
+		velocity += get_gravity() * delta
 	
 
 	if is_player_detected and player:
@@ -50,16 +50,11 @@ func _physics_process(delta: float) -> void:
 		if direction.x == -1:
 			attack.position.x = -abs(attack.position.x)
 		if is_attacking:
-			velocity = Vector2.ZERO
+			velocity.x = 0
 		else:
-			velocity = direction * SPEED
-			velocity.y = 0
+			velocity.x = direction.x * SPEED
 			anim.play("walk")			
 	else:
-		#velocity = Vector2.ZERO
-		#velocity.y = 0
-		#anim.play("idle")
-	
 		container.scale.x = last_player_direction
 	move_and_slide()
 	
