@@ -22,20 +22,22 @@ func _ready() -> void:
 	current_hp = max_hp
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("player_attack") and can_attack and is_on_floor():
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	if Input.is_action_just_pressed("player_attack") and can_attack :
 		attack()
+
 		
 	if is_attacking or is_dead:
-		velocity.x *= 0.3
+		velocity.x = 0
 		move_and_slide()
-		return		
+		return
 	if is_hit:
 		velocity.x = 0
 		move_and_slide()
 		return
 	
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY	
