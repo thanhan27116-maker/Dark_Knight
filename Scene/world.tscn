@@ -723,463 +723,471 @@ texture = ExtResource("5_pcvp0")
 [node name="game_manager" type="Node" parent="."]
 script = ExtResource("6_37axr")
 
-[node name="shop" parent="." instance=ExtResource("5_37axr")]
-z_index = -1
-position = Vector2(935, 448)
+[node name="game_objs" type="Node" parent="."]
 
-[node name="shop2" parent="." instance=ExtResource("5_37axr")]
-z_index = -1
-position = Vector2(4956, 211)
+[node name="decor" type="Node" parent="game_objs"]
 
-[node name="decor" type="Node2D" parent="."]
-
-[node name="Fence1" type="Sprite2D" parent="decor"]
+[node name="Fence1" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(1326, 557)
 scale = Vector2(2, 2)
 texture = ExtResource("5_0gfnl")
 
-[node name="Rock2" type="Sprite2D" parent="decor"]
+[node name="Rock2" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(265, 516)
 scale = Vector2(2, 2)
 texture = ExtResource("6_ol2hl")
 
-[node name="Lamp" type="Sprite2D" parent="decor"]
+[node name="Lamp" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(675, 519)
 scale = Vector2(2, 2)
 texture = ExtResource("7_ddf65")
 
-[node name="Lamp2" type="Sprite2D" parent="decor"]
+[node name="Lamp2" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(1212, 518)
 scale = Vector2(2, 2)
 texture = ExtResource("7_ddf65")
 
-[node name="Lamp3" type="Sprite2D" parent="decor"]
+[node name="Lamp3" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(1733, 519)
 scale = Vector2(2, 2)
 texture = ExtResource("7_ddf65")
 
-[node name="Grass2" type="Sprite2D" parent="decor"]
+[node name="Grass2" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(202, 471)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("8_ddf65")
 
-[node name="Grass3" type="Sprite2D" parent="decor"]
+[node name="Grass3" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(167, 471.00003)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("8_ddf65")
 
-[node name="Grass4" type="Sprite2D" parent="decor"]
+[node name="Grass4" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(310.00003, 519.00006)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("8_ddf65")
 
-[node name="Grass5" type="Sprite2D" parent="decor"]
+[node name="Grass5" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(463.00003, 567.00006)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("8_ddf65")
 
-[node name="Rock3" type="Sprite2D" parent="decor"]
+[node name="Rock3" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(1892, 516)
 scale = Vector2(2, 2)
 texture = ExtResource("6_ol2hl")
 
-[node name="Rock4" type="Sprite2D" parent="decor"]
+[node name="Rock4" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(2166, 367)
 scale = Vector2(2, 2)
 texture = ExtResource("10_a6mvv")
 
-[node name="Grass1" type="Sprite2D" parent="decor"]
+[node name="Grass1" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(1992, 428)
 scale = Vector2(3, 3)
 texture = ExtResource("11_s81y4")
 
-[node name="Grass6" type="Sprite2D" parent="decor"]
+[node name="Grass6" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(2019, 425)
 scale = Vector2(3, 3)
 texture = ExtResource("8_ddf65")
 
-[node name="Grass7" type="Sprite2D" parent="decor"]
+[node name="Grass7" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(2551, 377)
 scale = Vector2(3, 3)
 texture = ExtResource("8_ddf65")
 
-[node name="Fence2" type="Sprite2D" parent="decor"]
+[node name="Fence2" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(2782, 560)
 scale = Vector2(2, 2)
 texture = ExtResource("5_0gfnl")
 
-[node name="Lamp4" type="Sprite2D" parent="decor"]
+[node name="Lamp4" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(2893, 522)
 scale = Vector2(2, 2)
 texture = ExtResource("7_ddf65")
 
-[node name="Lamp5" type="Sprite2D" parent="decor"]
+[node name="Lamp5" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(3983, 519)
 scale = Vector2(2, 2)
 texture = ExtResource("7_ddf65")
 
-[node name="Lamp6" type="Sprite2D" parent="decor"]
+[node name="Lamp6" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(4716, 327)
 scale = Vector2(2, 2)
 texture = ExtResource("7_ddf65")
 
-[node name="Lamp7" type="Sprite2D" parent="decor"]
+[node name="Lamp7" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(5075, 519)
 scale = Vector2(2, 2)
 texture = ExtResource("7_ddf65")
 
-[node name="Lamp8" type="Sprite2D" parent="decor"]
+[node name="Lamp8" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(6304, 471)
 scale = Vector2(2, 2)
 texture = ExtResource("7_ddf65")
 
-[node name="Rock1" type="Sprite2D" parent="decor"]
+[node name="Rock1" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(2488, 376)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("11_a6mvv")
 
-[node name="Fence4" type="Sprite2D" parent="decor"]
+[node name="Fence4" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(3882, 560)
 scale = Vector2(2, 2)
 texture = ExtResource("12_s81y4")
 
-[node name="Fence3" type="Sprite2D" parent="decor"]
+[node name="Fence3" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(3009, 560)
 scale = Vector2(2, 2)
 texture = ExtResource("12_s81y4")
 
-[node name="Grass8" type="Sprite2D" parent="decor"]
+[node name="Grass8" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(5188.0005, 283.00003)
 scale = Vector2(2.6, 2.6)
 texture = ExtResource("13_s81y4")
 
-[node name="Grass9" type="Sprite2D" parent="decor"]
+[node name="Grass9" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(5216.0005, 283.00003)
 scale = Vector2(2.6, 2.6)
 texture = ExtResource("13_s81y4")
 
-[node name="Rock5" type="Sprite2D" parent="decor"]
+[node name="Rock5" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(5100, 325)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_a6mvv")
 
-[node name="Fence5" type="Sprite2D" parent="decor"]
+[node name="Fence5" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(4727, 558)
 scale = Vector2(2, 2)
 texture = ExtResource("12_s81y4")
 
-[node name="Fence6" type="Sprite2D" parent="decor"]
+[node name="Fence6" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(5186, 558)
 scale = Vector2(2, 2)
 texture = ExtResource("12_s81y4")
 
-[node name="Rock6" type="Sprite2D" parent="decor"]
+[node name="Rock6" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(5626, 468)
 scale = Vector2(2, 2)
 texture = ExtResource("6_ol2hl")
 
-[node name="Rock7" type="Sprite2D" parent="decor"]
+[node name="Rock7" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(5987, 515)
 scale = Vector2(2, 2)
 texture = ExtResource("6_ol2hl")
 
-[node name="Fence7" type="Sprite2D" parent="decor"]
+[node name="Fence7" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(6137, 509)
 scale = Vector2(2, 2)
 texture = ExtResource("12_s81y4")
 
-[node name="Grass10" type="Sprite2D" parent="decor"]
+[node name="Grass10" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(5816.0005, 422.00003)
 scale = Vector2(5, 5)
 texture = ExtResource("13_s81y4")
 
-[node name="Grass11" type="Sprite2D" parent="decor"]
+[node name="Grass11" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(4224, 521)
 scale = Vector2(4, 4)
 texture = ExtResource("13_s81y4")
 
-[node name="Grass12" type="Sprite2D" parent="decor"]
+[node name="Grass12" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(4491, 423)
 scale = Vector2(4, 4)
 texture = ExtResource("8_ddf65")
 
-[node name="Grass13" type="Sprite2D" parent="decor"]
+[node name="Grass13" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(4772, 375)
 scale = Vector2(4, 4)
 texture = ExtResource("8_ddf65")
 
-[node name="Grass14" type="Sprite2D" parent="decor"]
+[node name="Grass14" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(3770, 573)
 scale = Vector2(4, 4)
 texture = ExtResource("11_s81y4")
 
-[node name="Rock9" type="Sprite2D" parent="decor"]
+[node name="Rock9" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(3116, 566)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("10_a6mvv")
 
-[node name="Fence8" type="Sprite2D" parent="decor"]
+[node name="Fence8" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(72, 461)
 scale = Vector2(2, 2)
 texture = ExtResource("12_s81y4")
 
-[node name="Rock8" type="Sprite2D" parent="decor"]
+[node name="Rock8" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(6536, 418)
 scale = Vector2(2, 2)
 texture = ExtResource("6_ol2hl")
 
-[node name="Lamp9" type="Sprite2D" parent="decor"]
+[node name="Lamp9" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(8302, 519)
 scale = Vector2(2, 2)
 texture = ExtResource("7_ddf65")
 
-[node name="Lamp10" type="Sprite2D" parent="decor"]
+[node name="Lamp10" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(11210, 519)
 scale = Vector2(2, 2)
 texture = ExtResource("7_ddf65")
 
-[node name="Fence9" type="Sprite2D" parent="decor"]
+[node name="Fence9" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(9300, 557)
 scale = Vector2(2, 2)
 texture = ExtResource("12_s81y4")
 
-[node name="Fence13" type="Sprite2D" parent="decor"]
+[node name="Fence13" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(10213, 508)
 scale = Vector2(2, 2)
 texture = ExtResource("12_s81y4")
 
-[node name="Fence14" type="Sprite2D" parent="decor"]
+[node name="Fence14" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(10750, 557)
 scale = Vector2(2, 2)
 texture = ExtResource("12_s81y4")
 
-[node name="Fence15" type="Sprite2D" parent="decor"]
+[node name="Fence15" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(11021, 557)
 scale = Vector2(2, 2)
 texture = ExtResource("12_s81y4")
 
-[node name="Fence10" type="Sprite2D" parent="decor"]
+[node name="Fence10" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(8805, 557)
 scale = Vector2(2, 2)
 texture = ExtResource("12_s81y4")
 
-[node name="Fence11" type="Sprite2D" parent="decor"]
+[node name="Fence11" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(9115, 268)
 scale = Vector2(2, 2)
 texture = ExtResource("12_s81y4")
 
-[node name="Fence12" type="Sprite2D" parent="decor"]
+[node name="Fence12" type="Sprite2D" parent="game_objs/decor"]
 texture_filter = 1
 position = Vector2(8495, 268)
 scale = Vector2(2, 2)
 texture = ExtResource("12_s81y4")
 
-[node name="background" type="Node2D" parent="."]
+[node name="background" type="Node" parent="game_objs"]
 
-[node name="background1" parent="background" instance=ExtResource("2_sp6l4")]
+[node name="background1" parent="game_objs/background" instance=ExtResource("2_sp6l4")]
 
-[node name="background2" parent="background" instance=ExtResource("2_sp6l4")]
+[node name="background2" parent="game_objs/background" instance=ExtResource("2_sp6l4")]
 position = Vector2(1152, 0)
 
-[node name="background3" parent="background" instance=ExtResource("2_sp6l4")]
+[node name="background3" parent="game_objs/background" instance=ExtResource("2_sp6l4")]
 position = Vector2(2303, 0)
 
-[node name="background4" parent="background" instance=ExtResource("2_sp6l4")]
+[node name="background4" parent="game_objs/background" instance=ExtResource("2_sp6l4")]
 position = Vector2(3455, 0)
 
-[node name="background5" parent="background" instance=ExtResource("2_sp6l4")]
+[node name="background5" parent="game_objs/background" instance=ExtResource("2_sp6l4")]
 position = Vector2(4607, 0)
 
-[node name="background6" parent="background" instance=ExtResource("2_sp6l4")]
+[node name="background6" parent="game_objs/background" instance=ExtResource("2_sp6l4")]
 position = Vector2(5759, 0)
 
-[node name="background7" parent="background" instance=ExtResource("2_sp6l4")]
+[node name="background7" parent="game_objs/background" instance=ExtResource("2_sp6l4")]
 position = Vector2(6910, 0)
 
-[node name="background8" parent="background" instance=ExtResource("2_sp6l4")]
+[node name="background8" parent="game_objs/background" instance=ExtResource("2_sp6l4")]
 position = Vector2(8062, 0)
 
-[node name="background9" parent="background" instance=ExtResource("2_sp6l4")]
+[node name="background9" parent="game_objs/background" instance=ExtResource("2_sp6l4")]
 position = Vector2(9214, 0)
 
-[node name="background10" parent="background" instance=ExtResource("2_sp6l4")]
+[node name="background10" parent="game_objs/background" instance=ExtResource("2_sp6l4")]
 position = Vector2(10366, 0)
 
-[node name="player" parent="." instance=ExtResource("10_6a5p4")]
+[node name="player" parent="game_objs" instance=ExtResource("10_6a5p4")]
 position = Vector2(800, 539)
 
-[node name="check_point1" parent="." instance=ExtResource("13_0gfnl")]
-position = Vector2(1495, 545)
+[node name="enemies" type="Node" parent="game_objs"]
 
-[node name="check_point2" parent="." instance=ExtResource("13_0gfnl")]
-position = Vector2(2530, 353)
-
-[node name="check_point3" parent="." instance=ExtResource("13_0gfnl")]
-position = Vector2(2530, 353)
-
-[node name="check_point4" parent="." instance=ExtResource("13_0gfnl")]
-position = Vector2(5247, 257)
-
-[node name="shop3" parent="." instance=ExtResource("5_37axr")]
-position = Vector2(8469, 449)
-
-[node name="shop4" parent="." instance=ExtResource("5_37axr")]
-position = Vector2(11382, 447)
-
-[node name="Node2D" parent="." instance=ExtResource("13_0gfnl")]
-position = Vector2(8621, 545)
-
-[node name="Skeleton" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(1118, 544)
 
-[node name="Skeleton2" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton2" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(1659, 544)
 
-[node name="Skeleton3" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton3" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(2484, 351)
 
-[node name="Skeleton4" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton4" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(3177, 547)
 
-[node name="Skeleton5" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton5" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(3818, 546)
 
-[node name="Skeleton6" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton6" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(3223, 547)
 
-[node name="Skeleton7" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton7" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(3854, 546)
 
-[node name="Skeleton8" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton8" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(3882, 547)
 
-[node name="Skeleton9" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton9" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(3910, 547)
 
-[node name="Skeleton10" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton10" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(4361, 448)
 
-[node name="Skeleton11" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton11" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(4532, 400)
 
-[node name="Skeleton12" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton12" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(4836, 545)
 
-[node name="Skeleton13" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton13" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(5189, 543)
 
-[node name="Skeleton14" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton14" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(4767, 352)
 
-[node name="Skeleton15" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton15" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(5213, 256)
 
-[node name="Skeleton16" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton16" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(5620, 446)
 
-[node name="Skeleton17" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton17" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(5914, 495)
 
-[node name="Skeleton18" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton18" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(6112, 496)
 
-[node name="Skeleton19" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton19" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(6194, 497)
 
-[node name="Skeleton20" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton20" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(6575, 400)
 
-[node name="Skeleton21" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton21" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(6696, 399)
 
-[node name="Skeleton22" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton22" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(7006, 352)
 
-[node name="Skeleton23" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton23" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(7744, 208)
 
-[node name="Skeleton24" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton24" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(7490, 447)
 
-[node name="Skeleton25" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton25" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(7979, 352)
 
-[node name="Skeleton26" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton26" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(8288, 111)
 
-[node name="Skeleton27" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton27" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(8720, 303)
 
-[node name="Skeleton28" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton28" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(8683, 545)
 
-[node name="Skeleton29" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton29" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(9123, 255)
 
-[node name="Skeleton30" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton30" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(9479, 158)
 
-[node name="Skeleton31" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton31" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(9561, 541)
 
-[node name="Skeleton32" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton32" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(10204, 497)
 
-[node name="Skeleton33" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton33" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(10698, 542)
 
-[node name="Skeleton34" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton34" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(11104, 544)
 
-[node name="Skeleton35" parent="." instance=ExtResource("9_y56vo")]
+[node name="Skeleton35" parent="game_objs/enemies" instance=ExtResource("9_y56vo")]
 position = Vector2(11407, 545)
+
+[node name="shops" type="Node" parent="game_objs"]
+
+[node name="shop" parent="game_objs/shops" instance=ExtResource("5_37axr")]
+z_index = -1
+position = Vector2(935, 448)
+
+[node name="shop2" parent="game_objs/shops" instance=ExtResource("5_37axr")]
+z_index = -1
+position = Vector2(4956, 211)
+
+[node name="shop3" parent="game_objs/shops" instance=ExtResource("5_37axr")]
+position = Vector2(8469, 449)
+
+[node name="shop4" parent="game_objs/shops" instance=ExtResource("5_37axr")]
+position = Vector2(11382, 447)
+
+[node name="checkpoints" type="Node" parent="game_objs"]
+
+[node name="check_point1" parent="game_objs/checkpoints" instance=ExtResource("13_0gfnl")]
+position = Vector2(1495, 545)
+
+[node name="check_point2" parent="game_objs/checkpoints" instance=ExtResource("13_0gfnl")]
+position = Vector2(2530, 353)
+
+[node name="check_point3" parent="game_objs/checkpoints" instance=ExtResource("13_0gfnl")]
+position = Vector2(2530, 353)
+
+[node name="check_point4" parent="game_objs/checkpoints" instance=ExtResource("13_0gfnl")]
+position = Vector2(5247, 257)
+
+[node name="Node2D" parent="game_objs/checkpoints" instance=ExtResource("13_0gfnl")]
+position = Vector2(8621, 545)
 
 [connection signal="pressed" from="UI/Panel/resume" to="game_manager" method="_on_resume_pressed"]
 [connection signal="pressed" from="UI/Panel/back_to_menu" to="game_manager" method="_on_back_to_menu_pressed"]

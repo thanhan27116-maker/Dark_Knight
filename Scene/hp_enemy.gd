@@ -1,21 +1,19 @@
 extends TextureProgressBar
 
 
-@onready var enemy = get_parent().get_node("skeleton")
-
-
+@onready var enemy = get_parent()
 
 func _ready() -> void:	
-	max_value = enemy.max_ưhp
-	value = enemy.current_hp
-	enemy.health_changed(_on_health_changed) 
 	
+	if enemy and enemy.is_in_group("enemy"):
+		enemy.health_changed.connect(_on_health_changed)
+		max_value = enemy.max_hp
+		value = enemy.current_hp
+	else:
+		print("Enemy null")
 	
 func _on_health_changed(new_health: float):
-	value = new_health
-	
-	
-	pass
+	self.value = new_health
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
