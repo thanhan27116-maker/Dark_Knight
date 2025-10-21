@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var hurt_box: Area2D = $hurt_box
 @onready var attack: Area2D = $container/attack
 
+signal health_changed (new_health)
 
 var max_hp = 100 
 var current_hp = max_hp
@@ -23,8 +24,6 @@ var player = null
 var last_player_direction = 1
 
 func _ready() -> void:
-	sight.body_entered.connect(_on_area_2d_body_entered)
-	sight.body_exited.connect(_on_area_2d_body_exited)
 	current_hp = max_hp
 	attack.monitoring = true
 
@@ -119,8 +118,9 @@ func take_damage(amount: float):
 		is_attacking = false
 		can_attack = false
 		return
+		
 	current_hp -= amount
-	print("Current enemy hp: ", current_hp)
+	health_changed.emit(current_hp)
 	
 	is_hit = true
 	can_attack = false
@@ -138,6 +138,8 @@ func take_damage(amount: float):
 		if current_hp > 0 and  was_attack and player:
 			is_attacking = true
 			attacking_loop()
+			
+	
 
 func die():
 	if is_dead:

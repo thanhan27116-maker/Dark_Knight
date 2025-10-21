@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://dkcf7sgb08rog"]
+[gd_scene load_steps=85 format=3 uid="uid://dkcf7sgb08rog"]
 
 [ext_resource type="Script" uid="uid://cjt3yyawctxlg" path="res://Script/skeleton.gd" id="1_xy45g"]
 [ext_resource type="Texture2D" uid="uid://cex6fosdl7dre" path="res://Assets/Character/Skeleton Sprite Pack/Skeleton/Sprite Sheets/Skeleton Attack.png" id="1_ymvsc"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://c4irfw26b37jd" path="res://Assets/Character/Skeleton Sprite Pack/Skeleton/Sprite Sheets/Skeleton Idle.png" id="4_vqc8v"]
 [ext_resource type="Texture2D" uid="uid://dulieagibe4m8" path="res://Assets/Character/Skeleton Sprite Pack/Skeleton/Sprite Sheets/Skeleton React.png" id="5_ft6oh"]
 [ext_resource type="Texture2D" uid="uid://bo3okemcryx5s" path="res://Assets/Character/Skeleton Sprite Pack/Skeleton/Sprite Sheets/Skeleton Walk.png" id="6_x6jny"]
+[ext_resource type="Texture2D" uid="uid://kf3vohb1bp17" path="res://Assets/UI/BlackGreyUISheet-64.png" id="8_7j0h5"]
+[ext_resource type="Texture2D" uid="uid://ciktm7bytdqqn" path="res://Assets/UI/BlackGreyUISheet-47.png" id="8_ffcdy"]
+[ext_resource type="Script" uid="uid://dv3eq5rqacdae" path="res://Scene/hp_enemy.gd" id="10_d3qq4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8jiy"]
 size = Vector2(33, 48)
@@ -570,6 +573,19 @@ shape = SubResource("CircleShape2D_xy45g")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurt_box"]
 position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_xy45g")
+
+[node name="hp_enemy" type="TextureProgressBar" parent="."]
+texture_filter = 1
+offset_left = -29.0
+offset_top = -31.0
+offset_right = 19.0
+offset_bottom = -25.0
+value = 100.0
+fill_mode = 1
+texture_under = ExtResource("8_ffcdy")
+texture_progress = ExtResource("8_7j0h5")
+script = ExtResource("10_d3qq4")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="container/attack" to="." method="_on_attack_body_entered"]
 [connection signal="body_exited" from="container/attack" to="." method="_on_attack_body_exited"]
